@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="websitecss.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Library Management System</h1>
+            <p>Welcome to our library! Explore, learn, and discover.</p>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <nav>
+                <a href="#" onclick="showSection('addBook')">Add Book</a>
+                <a href="#" onclick="showSection('searchBook')">Search Book</a>
+                <a href="#" onclick="showSection('searchAuthorBooks')">Search Author's Books</a>
+                <a href="#" onclick="showSection('userRecord')">User Record</a>
+                <a href="#" onclick="showSection('bookRecord')">Book Record</a>
+                <a href="#" onclick="showSection('lendBook')">Lend Book</a>
+                <a href="#" onclick="showSection('returnBook')">Return Book</a>
+                <a href="#" onclick="showSection('deleteUser')">Delete User</a>
+                <a href="#" onclick="showSection('deleteBook')">Delete Book</a>
+            </nav>
+        </aside>
+
+        
+        <main>
+            <section id="loginSection" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Login</h2>
+                    <div class="login-container">
+                        <div class="login-box">
+                            <h3>Admin Login</h3>
+                            <form id="adminLoginForm">
+                                <input type="text" id="adminUsername" placeholder="Username" required>
+                                <input type="password" id="adminPassword" placeholder="Password" required>
+                                <button type="submit">Login</button>
+                            </form>
+                            <button onclick="showSection('adminSignup')">Sign Up</button>
+                        </div>
+                        <div class="login-box">
+                            <h3>User Login</h3>
+                            <form id="userLoginForm">
+                                <input type="number" id="userId" placeholder="User ID" required>
+                                <input type="password" id="userPassword" placeholder="Password" required>
+                                <button type="submit">Login</button>
+                            </form>
+                            <button onclick="showSection('userSignup')">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section id="adminSignup" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Admin Sign Up</h2>
+                    <form id="adminSignupForm">
+                        <input type="number" id="adminSignupUsername" placeholder="Username" required>
+                        <input type="text" id="adminName" placeholder="Name" required>
+                        <input type="text" id="adminFatherName" placeholder="Father's Name" required>
+                        <input type="text" id="adminAddress" placeholder="Address" required>
+                        <input type="text" id="adminPhone" placeholder="Phone Number" required>
+                        <input type="email" id="adminEmail" placeholder="Email" required>
+                        <input type="password" id="adminSignupPassword" placeholder="Password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </section>
+    
+            <section id="userSignup" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>User Sign Up</h2>
+                    <form id="userSignupForm">
+                        <input type="number" id="userSignupId" placeholder="User ID" required>
+                        <input type="text" id="userName" placeholder="Name" required>
+                        <input type="text" id="userFatherName" placeholder="Father's Name" required>
+                        <input type="text" id="userAddress" placeholder="Address" required>
+                        <input type="text" id="userPhone" placeholder="Phone Number" required>
+                        <input type="email" id="userEmail" placeholder="Email" required>
+                        <input type="password" id="userSignupPassword" placeholder="Password" required>
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="addUser" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Add User</h2>
+                    <form id="adduserForm">
+                        <input type="number" id="addUserId" placeholder="User ID" required>
+                        <input type="text" id="addUsername" placeholder="Name" required>
+                        <input type="text" id="addUserFatherName" placeholder="Father's Name" required>
+                        <input type="text" id="addUserAddress" placeholder="Address" required>
+                        <input type="text" id="addUserPhone" placeholder="Phone Number" required>
+                        <input type="email" id="addUserEmail" placeholder="Email" required>
+                        <input type="password" id="addUserPassword" placeholder="Password" required>
+                        <button type="submit">Add User</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="addBook" class="page-section" style="display: none;">
+                <div class="container" >
+                    <h2>Add Book</h2>
+                    <form id="bookForm">
+                        <input type="text" id="bookTitle" placeholder="Book Name" required>
+                        <input type="text" id="bookAuthor" placeholder="Author Name" required>
+                        <input type="number" id="bookEdition" placeholder="Edition" required>
+                        <input type="text" id="bookGenre" list="genres" placeholder="Genre" required>
+                        <datalist id="genres">
+                            <option value="Sci-Fi">
+                            <option value="Mystery">
+                            <option value="Fantasy">
+                            <option value="Romance">
+                            <option value="Thriller">
+                        </datalist>
+                        <input type="number" id="bookCopies" placeholder="Number of Copies" required>
+                        <button type="submit">Add Book</button>
+                    </form>
+                </div>
+            </section>
+    
+            <section id="searchBook" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Search Book</h2>
+                    <h3>By Author Name</h3>
+                    <form id="searchByAuthorForm">
+                        <input type="text" id="searchAuthor" placeholder="Author Name" required>
+                        <button type="submit">Search</button>
+                    </form>
+                    <div id="searchByAuthorResults"></div>
+                    <h3>By Book Name</h3>
+                    <form id="searchByNameForm">
+                        <input type="text" id="searchBookName" placeholder="Book Name" required>
+                        <button type="submit">Search</button>
+                    </form>
+                    <div id="searchByNameResults"></div>
+                </div>
+            </section>
+    
+            <section id="searchAuthorBooks" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Search Author's Books</h2>
+                    <form id="searchAuthorBooksForm">
+                        <input type="text" id="searchAuthorBooksName" placeholder="Author Name" required>
+                        <button type="submit">Search</button>
+                    </form>
+                    <div id="searchAuthorBooksResults"></div>
+                </div>
+            </section>
+    
+            <section id="userRecord" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>User Record</h2>
+                    <button class="styled-button" onclick="showUsers()">Show Users</button>
+                    <div id="userRecords"></div>
+                </div>
+            </section>
+    
+            <section id="bookRecord" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Book Record</h2>
+                    <button onclick="showBooks()">Show Books</button>
+                    <div id="bookRecords"></div>
+                </div>
+            </section>
+    
+            <section id="lendBook" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Lend Book</h2>
+                    <form id="lendBookForm">
+                        <input type="text" id="lendBookTitle" placeholder="Book Name" required>
+                        <input type="text" id="lendBookAuthor" placeholder="Author Name" required>
+                        <input type="number" id="lendBookEdition" placeholder="Edition" required>
+                        <!-- <input type="number" id="UserID" placeholder="User ID" required> -->
+                        <!-- <input type="number" id="LendPeriod" placeholder="Lend Period" required> -->
+                        <button type="submit">Search Book</button>
+                    </form>
+                    <div id="lendBookResults"></div>
+                    <form id="lendBookUserForm" style="display:none;">
+                        <input type="number" id="lendUserId" placeholder="User ID" required>
+                        <button type="submit">Lend Book</button>
+                    </form>
+                </div>
+            </section>
+    
+            <section id="returnBook" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Return Book</h2>
+                    <form id="returnBookForm">
+                        <input type="number" id="returnUserId" placeholder="User ID" required>
+                        <input type="number" id="returnBookId" placeholder="Book ID" required>
+                        <input type="number" id="rating" placeholder="Rating" required>
+
+                        <button type="submit">Return Book</button>
+                    </form>
+                </div>
+            </section>
+    
+            <section id="deleteUser" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Delete User</h2>
+                    <form id="deleteUserForm">
+                        <input type="number" id="deleteUserId" placeholder="User ID" required>
+                        <button type="submit">Delete User</button>
+                    </form>
+                </div>
+            </section>
+    
+            <section id="deleteBook" class="page-section" style="display: none;">
+                <div class="container">
+                    <h2>Delete Book</h2>
+                    <form id="deleteBookForm">
+                        <input type="number" id="deleteBookId" placeholder="Book ID" required>
+                        <button type="submit">Delete Book</button>
+                    </form>
+                </div>
+            </section>
+            <section id="adminOperations" class="page-section" style="display: none;">
+                <!-- Admin operations -->
+                <a href="#" onclick="showSection('addBook')">Add Book</a>
+                <a href="#" onclick="showSection('searchBook')">Search Book</a>
+                <a href="#" onclick="showSection('searchAuthorBooks')">Search Author's Books</a>
+                <a href="#" onclick="showSection('userRecord')">User Record</a>
+                <a href="#" onclick="showSection('bookRecord')">Book Record</a>
+                <a href="#" onclick="showSection('lendBook')">Lend Book</a>
+                <a href="#" onclick="showSection('returnBook')">Return Book</a>
+                <a href="#" onclick="showSection('deleteUser')">Delete User</a>
+                <a href="#" onclick="showSection('deleteBook')">Delete Book</a>
+            </section>
+            
+            <section id="userOperations" class="page-section" style="display: none;">
+                <!-- User operations -->
+                <a href="#" onclick="showSection('searchBook')">Search Book</a>
+                <a href="#" onclick="showSection('searchAuthorBooks')">Search Author's Books</a>
+                <a href="#" onclick="showSection('bookRecord')">Book Record</a>
+                <a href="#" onclick="showSection('lendBook')">Borrow Book</a>
+                <a href="#" onclick="showSection('returnBook')">Return Book</a>
+            </section>
+        </main>
+    
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Library Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="websitejs.js"></script>
+</body>
+</html>
