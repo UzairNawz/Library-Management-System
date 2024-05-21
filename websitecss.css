@@ -1,0 +1,251 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 290px;
+    background-color: #343a40;
+    color: #fff;
+    height: 100vh;
+    position: inherit;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.sidebar nav a:hover {
+    color: #ffc107;
+}
+
+/* Main Content Styling Adjustments */
+.main-content {
+    display: flex;
+}
+
+main {
+    margin-left: 50px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.page-section {
+    display: none;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #343a40;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    border: 2px solid #343a40;
+    font-size: 1em;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form button:focus {
+    outline: none;
+    border-color: #ffc107;
+}
+
+form button {
+    background-color: #343a40;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+/* Login and Signup Styling */
+.login-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-box {
+    width: 45%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h3 {
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.login-box form input[type="text"],
+.login-box form input[type="number"],
+.login-box form input[type="email"],
+.login-box form input[type="password"],
+.login-box form button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 2px solid #343a40;
+    font-size: 1em;
+}
+
+.login-box form button {
+    background-color: #343a40;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-box form button:hover {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+.login-box button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #343a40;
+}
+
+ul li:hover {
+    background-color: #e9ecef;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Button Styling */
+.styled-button,
+.signup-button,
+.login-box button {
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.styled-button:hover,
+.signup-button:hover,
+.login-box button:hover {
+    background-color: #ffc107;
+    color: #343a40;
+}
